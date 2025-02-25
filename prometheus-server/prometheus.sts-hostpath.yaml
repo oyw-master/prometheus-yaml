@@ -77,6 +77,8 @@ spec:
           configMap:
             name: prometheus-rules
         - name: prometheus-data
-          hostpath:
-            claimName: prometheus-pvc  # 这里使用 PVC
+          hostPath:
+            path: /prometheus
+            type: DirectoryOrCreate #使用hostpath
+
 
