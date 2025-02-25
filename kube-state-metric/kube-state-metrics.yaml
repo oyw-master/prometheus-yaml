@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: kube-state-metrics
-        image: quay.io/coreos/kube-state-metrics:v1.9.5 
+        image: 192.168.199.240/tanzhi-prometheus/kube-state-metrics:v1.9.5
         ports:
         - containerPort: 8080
         - containerPort: 8081

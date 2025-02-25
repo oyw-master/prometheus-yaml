@@ -22,7 +22,7 @@ spec:
       serviceAccountName: prometheus
       initContainers:
       - name: "init-chown-data"
-        image: "busybox:latest"
+        image: "192.168.199.240/tanzhi-prometheus/busybox:latest"
         imagePullPolicy: "IfNotPresent"
         command: ["chown", "-R", "65534:65534", "/data"]
         volumeMounts:
@@ -31,7 +31,7 @@ spec:
           subPath: ""
       containers:
         - name: prometheus-server
-          image: "prom/prometheus:v2.2.1"
+          image: "192.168.199.240/tanzhi-prometheus/prometheus:v2.42.0"
           imagePullPolicy: "IfNotPresent"
           args:
             - --config.file=/etc/config/prometheus.yml
