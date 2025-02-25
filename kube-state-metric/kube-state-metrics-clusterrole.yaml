@@ -1,0 +1,26 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: kube-state-metrics
+  namespace: monitoring
+rules:
+  - apiGroups: ["*"]
+    resources:
+      - pods
+      - deployments
+      - replicasets
+      - statefulsets
+      - daemonsets
+      - jobs
+      - cronjobs
+      - services
+      - endpoints
+      - persistentvolumeclaims
+      - persistentvolumes
+      - nodes
+      - namespaces
+      - poddisruptionbudgets
+      - horizontalpodautoscalers
+      - storageclasses
+    verbs: ["get", "list", "watch"]
+
